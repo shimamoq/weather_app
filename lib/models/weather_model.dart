@@ -143,6 +143,8 @@ class HourlyUnits {
 
     factory HourlyUnits.fromRawJson(String str) => HourlyUnits.fromJson(json.decode(str));
 
+  get hourlyUnits => null;
+
     String toRawJson() => json.encode(toJson());
 
     factory HourlyUnits.fromJson(Map<String, dynamic> json) => HourlyUnits(

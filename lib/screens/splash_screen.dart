@@ -28,9 +28,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
   Size size = MediaQuery.of(context).size;
     return const Scaffold(
+      
       // backgroundColor: Color.fromARGB(255, 162, 199, 229)
-      // ,
-      backgroundColor: Color.fromARGB(255, 166, 185, 199),
+      // ,    
+      backgroundColor: Color.fromARGB(255, 243, 174, 85),
+
+      body: Center(child: Text("Hello!",style: TextStyle(color: Color.fromARGB(255, 255, 255, 255),fontSize: 40),)),
       );
     
   }

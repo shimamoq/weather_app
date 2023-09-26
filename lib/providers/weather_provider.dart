@@ -9,8 +9,12 @@ import 'package:weather_app/models/weather_model.dart';
 class WeatherProvider with ChangeNotifier {
 // List<Hourly> hourly = [];
 WeatherModel? todayWeather;
+// HourlyUnits?hourlyUnitss;
+
   bool isLoading = true;
   bool isFailed = false;
+
+  get hourlyUnitss => null;
 
   setLoading(bool status) {
     Timer(const Duration(milliseconds: 50), () {
@@ -34,11 +38,9 @@ WeatherModel? todayWeather;
 print("StatusCode : ${response.statusCode}")
 ;
 print("ResBody ${response.body}");    if (response.statusCode == 200) {
-      // var decodedData = json.decode(response.body);
-      // for (var x in decodedData) {
-      //   Weatherr.add(WeatherModel.fromJson(x));
-      // }
       todayWeather = WeatherModel.fromJson(json.decode(response.body));
+            // hourlyUnitss = HourlyUnits.fromJson(json.decode(response.body));
+
       notifyListeners();
     } else {
       setFailed(true);
